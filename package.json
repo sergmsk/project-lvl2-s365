@@ -1,0 +1,23 @@
+{
+  "name": "clidiffer",
+  "version": "0.0.1",
+  "description": "cli finding differences",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergmsk/project-lvl2-s365.git"
+  },
+  "keywords": [
+    "finding",
+    "differences"
+  ],
+  "author": "Sergey Kusachev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergmsk/project-lvl2-s365/issues"
+  },
+  "homepage": "https://github.com/sergmsk/project-lvl2-s365#readme"
+}
