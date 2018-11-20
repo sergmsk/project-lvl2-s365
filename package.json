@@ -2,10 +2,17 @@
   "name": "clidiffer",
   "version": "0.0.1",
   "description": "cli finding differences",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
   },
+  "bin": {
+    "gendiff": "dist/bin/gendiff.js"
+  },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sergmsk/project-lvl2-s365.git"
@@ -19,5 +26,11 @@
   "bugs": {
     "url": "https://github.com/sergmsk/project-lvl2-s365/issues"
   },
-  "homepage": "https://github.com/sergmsk/project-lvl2-s365#readme"
+  "homepage": "https://github.com/sergmsk/project-lvl2-s365#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.6"
+  }
 }
