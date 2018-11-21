@@ -1,6 +1,6 @@
 {
   "name": "clidiffer",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "cli finding differences",
   "main": "dist/index.js",
   "scripts": {
@@ -42,6 +42,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^22.0.0",
     "jest": "^23.6.0",
+    "jest-cli": "^23.6.0",
     "regenerator-runtime": "^0.13.1"
   },
   "dependencies": {
