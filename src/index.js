@@ -1,1 +1,1 @@
-export default (firstFile, secondFile) => 'test';
+export default (firstFile, secondFile) => 'test'; // eslint-disable-line
