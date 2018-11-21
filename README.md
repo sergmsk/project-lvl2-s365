@@ -9,6 +9,10 @@
 
 ### use
 
+```gendiff <before>.json <after>.json```
+
+[![asciicast](https://asciinema.org/a/dKcwRb2oHRUyJLO4yshkiRksY.svg)](https://asciinema.org/a/dKcwRb2oHRUyJLO4yshkiRksY)
+
 ```gendiff --help```
 
 [![asciicast](https://asciinema.org/a/dy5MrJq8ccgwtdJftTUFhfWY8.svg)](https://asciinema.org/a/dy5MrJq8ccgwtdJftTUFhfWY8)
