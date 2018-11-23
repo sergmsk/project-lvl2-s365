@@ -1,5 +1,8 @@
 import fs from 'fs';
+import { extname } from 'path';
 import _ from 'lodash';
+import parsers from './parsers';
+
 
 const typeDispatcher = [
   {
@@ -25,8 +28,8 @@ const typeDispatcher = [
 ];
 
 export default (firstFile, secondFile) => {
-  const first = JSON.parse(fs.readFileSync(firstFile));
-  const second = JSON.parse(fs.readFileSync(secondFile));
+  const first = parsers(extname(firstFile), fs.readFileSync(firstFile));
+  const second = parsers(extname(secondFile), fs.readFileSync(secondFile));
   const keys = _.union(Object.keys(first), Object.keys(second));
   const dispatcher = key => _.find(typeDispatcher, disp => disp.check(first, second, key));
   const result = keys.reduce((acc, key) => (
