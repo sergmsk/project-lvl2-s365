@@ -28,8 +28,8 @@ const typeDispatcher = [
 ];
 
 export default (firstFile, secondFile) => {
-  const first = parsers(extname(firstFile), fs.readFileSync(firstFile));
-  const second = parsers(extname(secondFile), fs.readFileSync(secondFile));
+  const first = parsers(extname(firstFile), fs.readFileSync(firstFile, 'utf-8'));
+  const second = parsers(extname(secondFile), fs.readFileSync(secondFile, 'utf-8'));
   const keys = _.union(Object.keys(first), Object.keys(second));
   const dispatcher = key => _.find(typeDispatcher, disp => disp.check(first, second, key));
   const result = keys.reduce((acc, key) => (

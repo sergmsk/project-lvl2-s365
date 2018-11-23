@@ -11,6 +11,7 @@
 
 ```gendiff <before>.json <after>.json```
 ```gendiff <before>.yml <after>.yml```
+```gendiff <before>.ini <after>.ini```
 
 [![asciicast](https://asciinema.org/a/hA208Aq3FiRugdxsgV6Nqu2qq.svg)](https://asciinema.org/a/hA208Aq3FiRugdxsgV6Nqu2qq)
 
