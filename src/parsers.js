@@ -11,7 +11,7 @@ const parsers = (ext) => {
   return handler[ext];
 };
 
-export default (fileExt, file) => {
+export default (fileExt, data) => {
   const parse = parsers(fileExt);
-  return parse(file);
+  return parse(data);
 };
