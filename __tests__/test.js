@@ -6,14 +6,11 @@ const after = '__tests__/__fixtures__/after';
 const res = '__tests__/__fixtures__/result';
 
 
-describe('simple diff', () => {
+describe('diff', () => {
   it('simple', () => {
     const expected = readFileSync(res, 'utf8');
-    const json = gendiff(`${before}.json`, `${after}.json`);
-    expect(json).toBe(expected);
-    const yml = gendiff(`${before}.yml`, `${after}.yml`);
-    expect(yml).toBe(expected);
-    const ini = gendiff(`${before}.ini`, `${after}.ini`);
-    expect(ini).toBe(expected);
+    expect(gendiff(`${before}.json`, `${after}.json`)).toBe(expected);
+    expect(gendiff(`${before}.yml`, `${after}.yml`)).toBe(expected);
+    expect(gendiff(`${before}.ini`, `${after}.ini`)).toBe(expected);
   });
 });
