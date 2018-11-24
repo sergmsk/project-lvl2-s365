@@ -22,9 +22,9 @@ describe('diff flat', () => {
   });
 });
 
-// describe('diff nested', () => {
-//   it('nested JSON -> JSON', () => {
-//     const expected = readFileSync(`${res}Nested`, 'utf8');
-//     expected(gendiff(`${before}Nested.json`, `${after}Nested.json`)).toBe(expected);
-//   });
-// });
+describe('diff nested', () => {
+  it('nested JSON -> JSON', () => {
+    const expected = readFileSync(`${res}Nested`, 'utf8');
+    expected(gendiff(`${before}Nested.json`, `${after}Nested.json`)).toBe(expected);
+  });
+});
