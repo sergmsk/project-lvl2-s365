@@ -1,6 +1,6 @@
 import renderAsTree from './tree';
 
-const choice = format => {
+const choiceRenderFormat = format => {
   const handler = {
     'tree' : renderAsTree,
   }
@@ -8,7 +8,7 @@ const choice = format => {
 }
 
 export default (ast, format = 'tree') => {
-  const rend = choice(format);
+  const rend = choiceRenderFormat(format);
   return rend(ast);
 };
 
