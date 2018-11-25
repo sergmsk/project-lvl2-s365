@@ -4,7 +4,6 @@ import _ from 'lodash';
 import parsers from './parsers';
 import makeAST from './ast';
 
-
 const typeDispatcher = [
   {
     type: 'added',
@@ -27,7 +26,6 @@ const typeDispatcher = [
     string: (f, s, key) => `  ${key}: ${f[key]}`,
   },
 ];
-
 
 export default (firstFile, secondFile) => {
   const first = parsers(extname(firstFile), readFileSync(firstFile, 'utf-8'));
