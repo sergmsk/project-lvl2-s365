@@ -1,7 +1,7 @@
 import renderAsTree from './tree';
 
 const choiceRenderFormat = (format) => {
-  const handler = { tree: renderAsTree };
+  const handler = { tree: renderAsTree, plain: renderAsPlain };
   return handler[format];
 };
 
