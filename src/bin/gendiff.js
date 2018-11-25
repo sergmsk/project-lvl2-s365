@@ -9,5 +9,4 @@ program
   .option('-f --format [type]', 'output format: tree, plain, json', 'tree')
   .arguments('<firstConfig> <secondConfig>')
   .action((file1, file2, options) => console.log(gendiff(file1, file2, options.format)))
-programm  
   .parse(process.argv);
