@@ -2,7 +2,7 @@ import { readFileSync } from 'fs';
 import { extname } from 'path';
 import _ from 'lodash';
 import parsers from './parsers';
-import makeAST from './ast';
+import makeAST from './makeAST';
 
 const typeDispatcher = [
   {
