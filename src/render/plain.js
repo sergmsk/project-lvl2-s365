@@ -1,5 +1,6 @@
 import _ from 'lodash';
 
+const isNumeric = num => !isNaN(parseFloat(num)) && isFinite(num); // eslint-disable-line
 const getValue = (arg) => {
   const types = {
     boolean: arg,
@@ -7,7 +8,7 @@ const getValue = (arg) => {
     string: `'${arg}'`,
     object: '[complex value]',
   };
-  return types[typeof arg];
+  return isNumeric(arg) ? parseFloat(arg) : types[typeof arg];
 };
 
 const renderAsPlain = (ast, parent = '') => {
