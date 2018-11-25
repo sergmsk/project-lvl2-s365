@@ -17,6 +17,14 @@
 
 [![asciicast](https://asciinema.org/a/hA208Aq3FiRugdxsgV6Nqu2qq.svg)](https://asciinema.org/a/hA208Aq3FiRugdxsgV6Nqu2qq)
 
+```gendiff --format tree <before>.json <after>.json```
+
+```gendiff --format plain <before>.yml <after>.yml```
+
+```gendiff --format json <before>.ini <after>.ini```
+
+[![asciicast](https://asciinema.org/a/VITyonQRnbKqOtg7N9V1veB5p.svg)](https://asciinema.org/a/VITyonQRnbKqOtg7N9V1veB5p)
+
 ```gendiff --help```
 
 [![asciicast](https://asciinema.org/a/dy5MrJq8ccgwtdJftTUFhfWY8.svg)](https://asciinema.org/a/dy5MrJq8ccgwtdJftTUFhfWY8)
