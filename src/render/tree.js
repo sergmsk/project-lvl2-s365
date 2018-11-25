@@ -1,10 +1,10 @@
 import _ from 'lodash';
 
 const stringify = (value, currDept = 1, tab = 4) => {
+  if (!_.isObject(value)) return value;
+
   const space = currDept * tab;
-  if (!_.isObject(value)) {
-    return value;
-  }
+  
   const body = Object.keys(value)
     .map(key => `${' '.repeat(space)}${key}: ${stringify(value[key], currDept + 1)}`)
     .join('\n');
