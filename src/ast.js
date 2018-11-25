@@ -4,7 +4,7 @@ const dispatcher = [
   {
     type: 'nested',
     check: (obj1, obj2, key) => _.isObject(obj1[key]) && _.isObject(obj2[key]),
-    getState: (obj1, obj2, obj1uncAST) => ({ children: obj1uncAST(obj1, obj2) }),
+    getState: (obj1, obj2, funcAST) => ({ children: funcAST(obj1, obj2) }),
   },
   {
     type: 'added',
@@ -19,7 +19,7 @@ const dispatcher = [
   {
     type: 'changed',
     check: (obj1, obj2, key) => _.has(obj1, key) && _.has(obj2, key) && (obj1[key] !== obj2[key]),
-    getState: (obj1, obj2) => ({ beobj1ore: obj1, aobj1ter: obj2 }),
+    getState: (obj1, obj2) => ({ before: obj1, after: obj2 }),
   },
   {
     type: 'unchanged',
