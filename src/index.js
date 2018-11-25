@@ -2,7 +2,8 @@ import { readFileSync } from 'fs';
 import { extname } from 'path';
 import _ from 'lodash';
 import parsers from './parsers';
-import makeAST from './makeAST';
+import makeAST from './ast';
+import render from './render/..'
 
 const typeDispatcher = [
   {
@@ -30,11 +31,12 @@ const typeDispatcher = [
 export default (firstFile, secondFile) => {
   const first = parsers(extname(firstFile), readFileSync(firstFile, 'utf-8'));
   const second = parsers(extname(secondFile), readFileSync(secondFile, 'utf-8'));
-  console.log(makeAST(first, second));
-  const keys = _.union(Object.keys(first), Object.keys(second));
-  const dispatcher = key => _.find(typeDispatcher, disp => disp.check(first, second, key));
-  const result = keys.reduce((acc, key) => (
-    [...acc, dispatcher(key).string(first, second, key)]
-  ), []);
-  return `{\n${result.join('\n')}\n}`;
+  const ast = makeAST(first, second);
+  return render(ast, 'string');
+  // const keys = _.union(Object.keys(first), Object.keys(second));
+  // const dispatcher = key => _.find(typeDispatcher, disp => disp.check(first, second, key));
+  // const result = keys.reduce((acc, key) => (
+  //   [...acc, dispatcher(key).string(first, second, key)]
+  // ), []);
+  // return `{\n${result.join('\n')}\n}`;
 };
