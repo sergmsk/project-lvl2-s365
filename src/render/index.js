@@ -1,4 +1,5 @@
 import renderAsTree from './tree';
+import renderAsPlain from './plain';
 
 const choiceRenderFormat = (format) => {
   const handler = { tree: renderAsTree, plain: renderAsPlain };
