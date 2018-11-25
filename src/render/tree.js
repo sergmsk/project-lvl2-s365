@@ -2,9 +2,7 @@ import _ from 'lodash';
 
 const stringify = (value, currDept = 1, tab = 4) => {
   if (!_.isObject(value)) return value;
-
   const space = currDept * tab;
-  
   const stringifedComplexValue = Object.keys(value)
     .map(key => `${' '.repeat(space)}${key}: ${stringify(value[key], currDept + 1)}`)
     .join('\n');
