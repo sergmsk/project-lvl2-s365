@@ -25,7 +25,7 @@ const renderAsTree = (ast, currDept = 1, tab = 4) => {
       nested: el => `${' '.repeat(space)}${el.key}: ${renderAsTree(el.children, currDept + 1)}`,
     };
     return handle[element.type](element);
-  }
+  };
 
   const res = _.flatten(ast.map(element => toString(element))).join('\n');
   return `{\n${res}\n${' '.repeat(space - tab)}}`;
