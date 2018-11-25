@@ -5,10 +5,10 @@ const stringify = (value, currDept = 1, tab = 4) => {
 
   const space = currDept * tab;
   
-  const body = Object.keys(value)
+  const stringifedComplexValue = Object.keys(value)
     .map(key => `${' '.repeat(space)}${key}: ${stringify(value[key], currDept + 1)}`)
     .join('\n');
-  return `{\n${body}\n${' '.repeat(space - tab)}}`;
+  return `{\n${stringifedComplexValue}\n${' '.repeat(space - tab)}}`;
 };
 
 const renderAsTree = (ast, currDept = 1, tab = 4) => {
