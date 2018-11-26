@@ -2,7 +2,7 @@ import { readFileSync } from 'fs';
 import { extname } from 'path';
 import getJSObj from './parsers';
 import makeAST from './ast';
-import render from './render';
+import render from './renderers';
 
 export default (firstFile, secondFile, format = 'tree') => {
   const firstObj = getJSObj(extname(firstFile), readFileSync(firstFile, 'utf-8'));

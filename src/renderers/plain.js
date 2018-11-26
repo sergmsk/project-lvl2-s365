@@ -1,7 +1,7 @@
 import _ from 'lodash';
 
 const isNumeric = num => !isNaN(parseFloat(num)) && isFinite(num); // eslint-disable-line
-const getValue = (arg) => {
+const stringify = (arg) => {
   const types = {
     boolean: arg,
     number: arg,
@@ -12,8 +12,8 @@ const getValue = (arg) => {
 };
 
 const renderAsPlain = (ast, parent = '') => {
-  const getFromTo = el => `From ${getValue(el.before)} to ${getValue(el.after)}`;
-  const getStringAddedWith = el => (_.isObject(el.value) ? '[complex value]' : `value: ${getValue(el.value)}`);
+  const getFromTo = el => `From ${stringify(el.oldValue)} to ${stringify(el.newValue)}`;
+  const getStringAddedWith = el => (_.isObject(el.value) ? '[complex value]' : `value: ${stringify(el.value)}`);
   const handlerAction = {
     nested: el => `${renderAsPlain(el.children, `${parent}${el.key}.`)}`,
     changed: el => `Property '${parent}${el.key}' was update. ${getFromTo(el)}`,

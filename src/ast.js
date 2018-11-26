@@ -19,7 +19,7 @@ const dispatcher = [
   {
     type: 'changed',
     check: (obj1, obj2, key) => _.has(obj1, key) && _.has(obj2, key) && (obj1[key] !== obj2[key]),
-    getState: (obj1, obj2) => ({ before: obj1, after: obj2 }),
+    getState: (obj1, obj2) => ({ oldValue: obj1, newValue: obj2 }),
   },
   {
     type: 'unchanged',

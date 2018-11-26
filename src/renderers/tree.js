@@ -1,7 +1,8 @@
 import _ from 'lodash';
 
-const stringify = (value, currDept = 1, tab = 4) => {
+const stringify = (value, currDept = 1) => {
   if (!_.isObject(value)) return value;
+  const tab = 4;
   const space = currDept * tab;
   const stringifedComplexValue = Object.keys(value)
     .map(key => `${' '.repeat(space)}${key}: ${stringify(value[key], currDept + 1)}`)
@@ -9,7 +10,8 @@ const stringify = (value, currDept = 1, tab = 4) => {
   return `{\n${stringifedComplexValue}\n${' '.repeat(space - tab)}}`;
 };
 
-const renderAsTree = (ast, currDept = 1, tab = 4) => {
+const renderAsTree = (ast, currDept = 1) => {
+  const tab = 4;
   const space = currDept * tab;
   const getString = (name, value, symb = ' ') => (
     `${' '.repeat(space - 2)}${symb} ${name}: ${stringify(value, currDept + 1)}`
@@ -19,7 +21,7 @@ const renderAsTree = (ast, currDept = 1, tab = 4) => {
       unchanged: el => getString(el.key, el.value),
       added: el => getString(el.key, el.value, '+'),
       removed: el => getString(el.key, el.value, '-'),
-      changed: el => [getString(el.key, el.before, '-'), getString(el.key, el.after, '+')],
+      changed: el => [getString(el.key, el.oldValue, '-'), getString(el.key, el.newValue, '+')],
       nested: el => `${' '.repeat(space)}${el.key}: ${renderAsTree(el.children, currDept + 1)}`,
     };
     return handle[element.type](element);
